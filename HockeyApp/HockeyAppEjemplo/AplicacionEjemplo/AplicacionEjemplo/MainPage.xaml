@@ -4,8 +4,10 @@
              xmlns:local="clr-namespace:AplicacionEjemplo"
              x:Class="AplicacionEjemplo.MainPage">
 
-  <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
+  <StackLayout Orientation="Vertical">
+    <Button x:Name="boton1" Text="Error" />
+    <Button x:Name="boton2" Text="Evento 1" />
+    <Button x:Name="boton3" Text="Evento 2" />
+  </StackLayout>
 
 </ContentPage>
