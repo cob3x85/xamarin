@@ -5,9 +5,9 @@
              x:Class="AplicacionEjemplo.MainPage">
 
   <StackLayout Orientation="Vertical">
-    <Button x:Name="boton1" Text="Error" />
-    <Button x:Name="boton2" Text="Evento 1" />
-    <Button x:Name="boton3" Text="Evento 2" />
+    <Button x:Name="btnError" Text="Error" />
+    <Button x:Name="btnEvento1" Text="Evento 1" />
+    <Button x:Name="btnEvento2" Text="Evento 2" />
   </StackLayout>
 
-</ContentPage>
+</ContentPage>  
