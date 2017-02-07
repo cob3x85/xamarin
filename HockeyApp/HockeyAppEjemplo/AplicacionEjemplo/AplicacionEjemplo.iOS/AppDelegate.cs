@@ -26,6 +26,8 @@ namespace AplicacionEjemplo.iOS
 
       var manager = BITHockeyManager.SharedHockeyManager;
       manager.Configure("17421d7948974e2d9216ffceae6fcd59");
+      manager.StartManager();
+
       global::Xamarin.Forms.Forms.Init();
       LoadApplication(new App());
 
