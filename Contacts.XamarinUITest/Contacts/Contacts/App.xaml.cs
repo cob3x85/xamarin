@@ -13,7 +13,7 @@ namespace Contacts
     {
       InitializeComponent();
 
-      MainPage = new Contacts.MainPage();
+      MainPage = new NavigationPage(new LoginPage());
     }
 
     protected override void OnStart()
