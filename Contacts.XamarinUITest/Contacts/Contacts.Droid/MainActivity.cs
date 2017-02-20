@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
@@ -18,7 +19,8 @@ namespace Contacts.Droid
       ToolbarResource = Resource.Layout.Toolbar;
 
       base.OnCreate(bundle);
-
+      // Initialize Azure Mobile Apps
+      Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
       global::Xamarin.Forms.Forms.Init(this, bundle);
       LoadApplication(new App());
     }
