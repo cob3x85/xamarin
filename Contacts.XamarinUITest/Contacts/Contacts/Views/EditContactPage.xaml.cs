@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace Contacts.Views
+namespace Contacts
 {
   public partial class EditContactPage : ContentPage
   {
-    public EditContactPage()
+    public EditContactPage(Contact contact)
     {
       InitializeComponent();
+      this.BindingContext = contact;
     }
   }
 }
