@@ -8,14 +8,14 @@ namespace Contacts
   {
     Ok,
     Error,
-    ComunicationError
+    CommunicationError
   }
 
   public enum SaveResult
   {
     Ok,
     Error,
-    ComunicationError
+    CommunicationError
   }
 
   public class User : ObservableBaseObject
