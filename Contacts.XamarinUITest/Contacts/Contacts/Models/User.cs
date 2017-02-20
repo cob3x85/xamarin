@@ -35,6 +35,12 @@ namespace Contacts
       Email = mail;
     }
 
+    public User(string username, string password)
+    {
+      UserName = username;
+      Password = password;
+    }
+
     private string phoneNumber;
     public string PhoneNumber
     {

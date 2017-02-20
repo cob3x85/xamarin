@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Contacts
 {
   public partial class LoginPage : ContentPage
   {
-    LoginVM context = new LoginVM();
+    readonly LoginVM context = new LoginVM();
 
     public LoginPage()
     {

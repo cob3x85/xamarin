@@ -60,7 +60,7 @@ namespace Contacts
 
     public LoginVM()
     {
-      LoginCommand = new Command(()=> Login());
+      LoginCommand = new Command(async () => await Login());
     }
 
     private async Task Login()
@@ -68,7 +68,7 @@ namespace Contacts
       if (!IsBusy)
       {
         IsBusy = true;
-        User = new User(UserName, Password, EMail);
+        User = new User(UserName, Password);
 
 
         if (!IsValidEmail)
@@ -80,9 +80,6 @@ namespace Contacts
             OnLoginCompleted(new LoginEventArgs(LoginResult.Ok));
             break;
           case LoginResult.CommunicationError:
-            OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
-            break;
-          default:
             OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
             break;
         }

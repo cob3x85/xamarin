@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
-	<uses-sdk android:minSdkVersion="15" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="xamarin.contacts.droid" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="19" />
+	<uses-permission android:name="android.permission.INTERNET" />
 	<application android:label="Contacts.Droid"></application>
 </manifest>
