@@ -12,20 +12,20 @@ namespace Contacts
     public ContactDirectory()
     {
       Contacts = new ObservableCollection<Contact>();
-      loadContacts();
+      //loadContacts();
       loadRandomContacts();
     }
 
-    AzureClient client = new AzureClient();
+    //AzureClient client = new AzureClient();
 
-    private async void loadContacts()
-    {
-      var contacts = await client.GetContacts();
-      foreach (var contact in contacts)
-      {
-        Contacts.Add(contact);
-      }
-    }
+    //private async void loadContacts()
+    //{
+    //  var contacts = await client.GetContacts();
+    //  foreach (var contact in contacts)
+    //  {
+    //    Contacts.Add(contact);
+    //  }
+    //}
 
     private void loadRandomContacts()
     {
@@ -44,7 +44,7 @@ namespace Contacts
     public async Task AddContact(Contact contact)
     {
       await Task.Delay(3000);
-      client.AddContact(contact);
+      //client.AddContact(contact);
       Contacts.Insert(0, contact);
     }
 

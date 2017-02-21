@@ -7,6 +7,7 @@
       <Image Source="Xamarin.png" HorizontalOptions="Fill">
       </Image>
       <ActivityIndicator AutomationId="indIsBusy" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}"/>
+      <Entry AutomationId="entMail" Placeholder="Email" Text="{Binding Email}"/>
       <Entry AutomationId="entBirthday" Placeholder="Fecha de nacimiento" Text="{Binding Birthday}"/>
       <Entry AutomationId="entPhoneNumber" Placeholder="Teléfono" Text="{Binding PhoneNumber}"/>
       <Entry AutomationId="entAddress" Placeholder="Dirección" Text="{Binding Address}"/>

@@ -69,10 +69,8 @@ namespace Contacts
       {
         IsBusy = true;
         User = new User(UserName, Password);
-
-
-        if (!IsValidEmail)
-          OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
+        //if (!IsValidEmail)
+        //  OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
 
         switch (await User.Login())
         {
