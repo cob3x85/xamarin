@@ -8,7 +8,7 @@ using Xamarin.UITest.Queries;
 namespace Contacts.UITest
 {
   [TestFixture(Platform.Android)]
-  //[TestFixture(Platform.iOS)]
+  [TestFixture(Platform.iOS)]
   public class Tests
   {
     IApp app;
@@ -28,12 +28,30 @@ namespace Contacts.UITest
     [Test]
     public void AppLaunches()
     {
-      //app.Repl();
-      //var query = app.Query(c => c.Class("EntryEditText")); 
+      app.Screenshot("Launched");
+    }
+
+    [Test]
+    public void LoginWillSuccess()
+    {
       app.EnterText("entUsername", "user1");
       app.EnterText("entPassword", "dasdsdsad");
       app.Tap("btnLogin");
-      
+    }
+
+    [Test]
+    public void LoginWillFail()
+    {
+      app.EnterText("entPassword", "dasdsdsad");
+      app.Tap("btnLogin");
+      app.Query("Error");
+    }
+
+    [Test]
+    public void CellWillBePressed()
+    {
+      LoginWillSuccess();
+
     }
   }
 }
