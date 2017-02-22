@@ -28,7 +28,10 @@ namespace Contacts.UITest
     [Test]
     public void AppLaunches()
     {
-      app.Screenshot("First screen.");
+      //app.Repl();
+      app.EnterText("entUsername", "user1");
+      app.EnterText("entPassword", "dasdsdsad");
+      app.Tap("btnLogin");
     }
   }
 }
