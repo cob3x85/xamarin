@@ -29,9 +29,11 @@ namespace Contacts.UITest
     public void AppLaunches()
     {
       //app.Repl();
+      //var query = app.Query(c => c.Class("EntryEditText")); 
       app.EnterText("entUsername", "user1");
       app.EnterText("entPassword", "dasdsdsad");
       app.Tap("btnLogin");
+      
     }
   }
 }
