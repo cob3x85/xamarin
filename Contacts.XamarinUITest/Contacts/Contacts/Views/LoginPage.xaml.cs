@@ -11,10 +11,10 @@ namespace Contacts
       InitializeComponent();
 
       this.BindingContext = context;
-      context.LoginCompleted += Context_LoginCompleted;
+      context.LoginCompleted += LoginCompleted;
     }
 
-    void Context_LoginCompleted(object sender, LoginEventArgs e)
+    void LoginCompleted(object sender, LoginEventArgs e)
     {
       if (e.LoginResult == LoginResult.Ok)
         Navigation.PushAsync(new UserProfilePage(context.User));

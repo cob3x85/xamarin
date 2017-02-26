@@ -56,14 +56,15 @@ namespace Contacts
     protected virtual void OnLoginCompleted(LoginEventArgs e)
     {
       LoginCompleted?.Invoke(this, e);
+
     }
 
     public LoginVM()
     {
-      LoginCommand = new Command(async () => await Login());
+      LoginCommand = new Command(() => Login());
     }
 
-    private async Task Login()
+    private async void Login()
     {
       if (!IsBusy)
       {
@@ -78,6 +79,9 @@ namespace Contacts
             OnLoginCompleted(new LoginEventArgs(LoginResult.Ok));
             break;
           case LoginResult.CommunicationError:
+            OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
+            break;
+          default:
             OnLoginCompleted(new LoginEventArgs(LoginResult.Error));
             break;
         }
