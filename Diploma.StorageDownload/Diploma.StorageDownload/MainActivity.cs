@@ -10,7 +10,7 @@ using XamarinDiplomado.Participants.Startup;
 
 namespace Diploma.StorageDownload
 {
-  [Activity(Label = "Diploma.StorageDownload", MainLauncher = true, Icon = "@drawable/icon")]
+  [Activity(Label = "Download Image", MainLauncher = true, Icon = "@drawable/icon")]
   public class MainActivity : Activity
   {
     protected override void OnCreate(Bundle bundle)
