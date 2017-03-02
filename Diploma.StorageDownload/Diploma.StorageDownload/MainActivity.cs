@@ -26,7 +26,7 @@ namespace Diploma.StorageDownload
       base.OnCreate(bundle);
 
       // Set our view from the "main" layout resource
-      SetContentView (Resource.Layout.Main);
+      SetContentView(Resource.Layout.Main);
 
       //Get controls into variables
       imagen = FindViewById<ImageView>(Resource.Id.imagen);
