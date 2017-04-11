@@ -61,7 +61,7 @@ namespace Reto4
             if(requestCode == 1 && resultCode == Result.Ok)
             {
                 btnSiguiente.Visibility = Android.Views.ViewStates.Invisible;
-                //Toast.MakeText(this, "Felicidades! Reto 4 completado.", ToastLength.Long).Show();
+                Toast.MakeText(this, "Felicidades! Reto 4 completado.", ToastLength.Long).Show();
             }
         }
     }

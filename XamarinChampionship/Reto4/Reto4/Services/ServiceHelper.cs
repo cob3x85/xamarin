@@ -10,11 +10,25 @@ namespace Reto4.Services
 
     private IMobileServiceTable<TorneoItem> _TorneoItemTable;
 
-    public async Task BuscarRegistros(string Correo)
+    public async Task<List<TorneoItem>> BuscarRegistros(string Correo)
     {
       _TorneoItemTable = clienteServicio.GetTable<TorneoItem>();
       List<TorneoItem> items = await _TorneoItemTable.Where(
         torneoItem => torneoItem.Email == Correo).ToListAsync();
+      return items;
+    }
+
+    public async Task InsertarEntidad(string direccionCorreo, string reto, string AndroidId)
+    {
+      _TorneoItemTable = clienteServicio.GetTable<TorneoItem>();
+
+
+      await _TorneoItemTable.InsertAsync(new TorneoItem
+      {
+        Email = direccionCorreo,
+        Reto = reto,
+        DeviceId = AndroidId
+      });
     }
   }
 }

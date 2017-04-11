@@ -21,6 +21,7 @@ namespace Reto4
       base.OnCreate(savedInstanceState);
       SetContentView(Resource.Layout.Registro);
       FindViewById<Button>(Resource.Id.btnConsulta).Click += OnBtnConsultaClick;
+      FindViewById<TextView>(Resource.Id.editTextEmail).Text = "cob3x85@outlook.com";
     }
 
     async void OnBtnConsultaClick(object sender, EventArgs e)
@@ -31,7 +32,23 @@ namespace Reto4
         // Retrieve the values the user entered into the UI
         string AndroidId = Android.Provider.Settings.Secure.GetString(ContentResolver, Android.Provider.Settings.Secure.AndroidId);
         string Email = FindViewById<TextView>(Resource.Id.editTextEmail).Text;
-        await serviceHelper.BuscarRegistros(Email);
+        string reto = Intent.GetStringExtra("Reto");
+        var items = await serviceHelper.BuscarRegistros(Email);
+        var registros = FindViewById<TextView>(Resource.Id.txtRegistros);
+        var builderData = new StringBuilder();
+        var totalRegistros = items.Count;
+        var newReto = string.Empty;
+        if (totalRegistros > 0)
+        {
+          foreach (var item in items)
+          {
+            var cadena = item.Reto.ToLowerInvariant().Equals("reto4") ? $"{item.Id} {item.Email} {item.Reto}+{totalRegistros}" : $"{item.Id} {item.Email} {item.Reto}";
+            newReto = item.Reto.ToLowerInvariant().Equals("reto4") && newReto.Length == 0 ? $"{item.Reto}+{totalRegistros}" : newReto;
+            builderData.AppendLine(cadena);
+          }
+        }
+        registros.Text = builderData.ToString();
+        //await serviceHelper.InsertarEntidad(Email, newReto, AndroidId);
         SetResult(Result.Ok, Intent);
 
       }
