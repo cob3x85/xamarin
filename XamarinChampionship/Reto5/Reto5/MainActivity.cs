@@ -62,6 +62,7 @@ namespace Reto5
         Reto = "Reto5@" + pais
       });
 
+      OnRefreshItemsSelected();
     }
 
     private async Task InitLocalStoreAsync()
