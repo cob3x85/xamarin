@@ -47,7 +47,6 @@ namespace Reto5
       btnRegistro = FindViewById<Button>(Resource.Id.BtnRegistro);
       // Registrar el manejador de evento click del botón Siguiente
       btnRegistro.Click += BtnSiguienteClick;
-
       OnRefreshItemsSelected();
     }
 
