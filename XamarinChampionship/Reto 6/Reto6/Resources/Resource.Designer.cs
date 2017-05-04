@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("Reto4.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Reto6.Resource", IsApplication=true)]
 
-namespace Reto4
+namespace Reto6
 {
 	
 	
@@ -63,32 +63,23 @@ namespace Reto4
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int btnConsulta = 2131034119;
-			
 			// aapt resource value: 0x7f050002
 			public const int btnSiguiente = 2131034114;
 			
-			// aapt resource value: 0x7f050006
-			public const int editTextEmail = 2131034118;
-			
-			// aapt resource value: 0x7f050001
-			public const int imageViewCinturon = 2131034113;
-			
 			// aapt resource value: 0x7f050003
-			public const int textViewAvisoPrivacidad = 2131034115;
-			
-			// aapt resource value: 0x7f050005
-			public const int textViewEmail = 2131034117;
+			public const int imageViewCinturon = 2131034115;
 			
 			// aapt resource value: 0x7f050000
-			public const int textViewResult = 2131034112;
+			public const int linearLayout1 = 2131034112;
 			
 			// aapt resource value: 0x7f050004
-			public const int textViewUrlPrivacidad = 2131034116;
+			public const int textViewAvisoPrivacidad = 2131034116;
 			
-			// aapt resource value: 0x7f050008
-			public const int txtRegistros = 2131034120;
+			// aapt resource value: 0x7f050001
+			public const int textViewResult = 2131034113;
+			
+			// aapt resource value: 0x7f050005
+			public const int textViewUrlPrivacidad = 2131034117;
 			
 			static Id()
 			{
@@ -104,10 +95,10 @@ namespace Reto4
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int Main = 2130903040;
+			public const int Cognitive = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Registro = 2130903041;
+			public const int Main = 2130903041;
 			
 			static Layout()
 			{
