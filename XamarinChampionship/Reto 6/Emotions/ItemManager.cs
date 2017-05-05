@@ -1,9 +1,16 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json;
 
 namespace Emotions
 {
-  public class ItemManager
+  public partial class ItemManager
   {
     static ItemManager defaultInstance = new ItemManager();
     MobileServiceClient client;
@@ -16,7 +23,15 @@ namespace Emotions
       this.todoTable = client.GetTable<TorneoItem>();
     }
 
-    public ItemManager DefaultManager { get; set; }
+    public static ItemManager DefaultManager
+    {
+      get
+      {
+        return defaultInstance;
+      }
+
+      private set => defaultInstance = value;
+    }
 
     public MobileServiceClient CurrentClient
     {
