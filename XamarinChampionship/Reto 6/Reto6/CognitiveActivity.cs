@@ -38,15 +38,15 @@ namespace Reto6
       btnRegistraResultados = FindViewById<Button>(Resource.Id.btnRegistraResultados);
       txtResultado = FindViewById<TextView>(Resource.Id.txtOutput);
 
-      btnRegistraResultados.Visibility = ViewStates.Invisible;
-      btnAnalizaFoto.Visibility = ViewStates.Invisible;
+      //btnRegistraResultados.Visibility = ViewStates.Invisible;
+      //btnAnalizaFoto.Visibility = ViewStates.Invisible;
       btnCamera.Click += BtnCamera_Click;
       btnAnalizaFoto.Click += BtnAnalizaFoto_Click;
       btnRegistraResultados.Click += BtnRegistraResultados_Click;
 
     }
 
-    private void BtnRegistraResultados_Click(object sender, EventArgs e)
+    private async void BtnRegistraResultados_Click(object sender, EventArgs e)
     {
       btnRegistraResultados.Visibility = ViewStates.Invisible;
       Toast.MakeText(this, "Registrando tus resultados", ToastLength.Short).Show();
@@ -54,11 +54,46 @@ namespace Reto6
       registro.DeviceId = Android.Provider.Settings.Secure.GetString(ContentResolver, Android.Provider.Settings.Secure.AndroidId);
       registro.Email = "cob3x85@outlook.com";
       registro.Reto = ResultadoEmociones;
+
+      await manager.SaveTaskAsync(registro);
+      SetResult(Result.Ok, Intent);
     }
 
-    private void BtnAnalizaFoto_Click(object sender, EventArgs e)
+    private async void BtnAnalizaFoto_Click(object sender, EventArgs e)
     {
-      throw new NotImplementedException();
+      if (streamCopy != null)
+      {
+        btnAnalizaFoto.Visibility = ViewStates.Invisible;
+        Toast.MakeText(this, "Analizando imagen utilizando Cognitive Services", ToastLength.Short).Show();
+        Dictionary<string, float> emotions = null;
+        try
+        {
+          streamCopy.Seek(0, SeekOrigin.Begin);
+          emotions = await ServiceEmotions.GetEmotions(streamCopy);
+        }
+        catch (Exception ex)
+        {
+          Toast.MakeText(this, "Se ha presentado un error al conectar con los servicios", ToastLength.Short).Show();
+          return;
+        }
+        StringBuilder sb = new StringBuilder();
+
+        if (emotions != null)
+        {
+          txtResultado.Text = "---Análisis de Emociones---";
+          sb.AppendLine();
+          foreach (var item in emotions)
+          {
+            string toAdd = item.Key + " : " + item.Value + " "; sb.Append(toAdd);
+          }
+          txtResultado.Text += sb.ToString();
+          btnRegistraResultados.Visibility = ViewStates.Visible;
+        }
+        else
+          txtResultado.Text = "---No se detectó una cara---";
+        ResultadoEmociones += sb.ToString();
+      }
+      else txtResultado.Text = "---No has seleccionado una imagen---";
     }
 
     private async void BtnCamera_Click(object sender, EventArgs e)
@@ -68,7 +103,8 @@ namespace Reto6
       {
         file = await ImageService.TakePicture(true);
       }
-      catch (Android.OS.OperationCanceledException) { }
+      catch (Android.OS.OperationCanceledException) {
+      }
       SetImageToControl(file);
       btnAnalizaFoto.Visibility = ViewStates.Visible;
     }
