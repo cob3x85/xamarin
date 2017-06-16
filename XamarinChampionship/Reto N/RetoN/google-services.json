@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "949252424820",
+    "firebase_url": "https://xamarinchampionship-a940f.firebaseio.com",
+    "project_id": "xamarinchampionship-a940f",
+    "storage_bucket": "xamarinchampionship-a940f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949252424820:android:ea0e2f40a990d014",
+        "android_client_info": {
+          "package_name": "com.pushhub.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949252424820-29mjv6tuhje4ojlpq848c5qggla32l8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY55D0S1dvBjR2AWwFYkmo-kc0uk11gOU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
