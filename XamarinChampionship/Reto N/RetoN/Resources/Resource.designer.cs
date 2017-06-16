@@ -27,6 +27,35 @@ namespace RetoN
 		public static void UpdateIdValues()
 		{
 			global::Gcm.Client.Resource.String.library_name = global::RetoN.Resource.String.library_name;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_in_right = global::RetoN.Resource.Animation.slide_in_right;
+			global::Xamarin.Auth._MobileServices.Resource.Animation.slide_out_left = global::RetoN.Resource.Animation.slide_out_left;
+			global::Xamarin.Auth._MobileServices.Resource.Drawable.ic_arrow_back = global::RetoN.Resource.Drawable.ic_arrow_back;
+			global::Xamarin.Auth._MobileServices.Resource.Id.webview = global::RetoN.Resource.Id.webview;
+			global::Xamarin.Auth._MobileServices.Resource.Layout.activity_webview = global::RetoN.Resource.Layout.activity_webview;
+			global::Xamarin.Auth._MobileServices.Resource.String.ApplicationName = global::RetoN.Resource.String.ApplicationName;
+			global::Xamarin.Auth._MobileServices.Resource.String.Hello = global::RetoN.Resource.String.Hello;
+			global::Xamarin.Auth._MobileServices.Resource.String.title_activity_webview = global::RetoN.Resource.String.title_activity_webview;
+			global::PCLCrypto.Resource.String.ApplicationName = global::RetoN.Resource.String.ApplicationName;
+			global::PCLCrypto.Resource.String.Hello = global::RetoN.Resource.String.Hello;
+		}
+		
+		public partial class Animation
+		{
+			
+			// aapt resource value: 0x7f040000
+			public const int slide_in_right = 2130968576;
+			
+			// aapt resource value: 0x7f040001
+			public const int slide_out_left = 2130968577;
+			
+			static Animation()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Animation()
+			{
+			}
 		}
 		
 		public partial class Attribute
@@ -46,7 +75,10 @@ namespace RetoN
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int ic_launcher = 2130837504;
+			public const int ic_arrow_back = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int ic_launcher = 2130837505;
 			
 			static Drawable()
 			{
@@ -61,26 +93,29 @@ namespace RetoN
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f070000
-			public const int LinearLayout1 = 2131165184;
+			// aapt resource value: 0x7f080000
+			public const int LinearLayout1 = 2131230720;
 			
-			// aapt resource value: 0x7f070003
-			public const int buttonAddToDo = 2131165187;
+			// aapt resource value: 0x7f080003
+			public const int buttonAddToDo = 2131230723;
 			
-			// aapt resource value: 0x7f070005
-			public const int checkToDoItem = 2131165189;
+			// aapt resource value: 0x7f080006
+			public const int checkToDoItem = 2131230726;
 			
-			// aapt resource value: 0x7f070004
-			public const int listViewToDo = 2131165188;
+			// aapt resource value: 0x7f080004
+			public const int listViewToDo = 2131230724;
 			
-			// aapt resource value: 0x7f070006
-			public const int menu_refresh = 2131165190;
+			// aapt resource value: 0x7f080007
+			public const int menu_refresh = 2131230727;
 			
-			// aapt resource value: 0x7f070002
-			public const int textNewToDo = 2131165186;
+			// aapt resource value: 0x7f080002
+			public const int textNewToDo = 2131230722;
 			
-			// aapt resource value: 0x7f070001
-			public const int textViewTitle = 2131165185;
+			// aapt resource value: 0x7f080001
+			public const int textViewTitle = 2131230721;
+			
+			// aapt resource value: 0x7f080005
+			public const int webview = 2131230725;
 			
 			static Id()
 			{
@@ -99,7 +134,10 @@ namespace RetoN
 			public const int Activity_To_Do = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Row_List_To_Do = 2130903041;
+			public const int activity_webview = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int Row_List_To_Do = 2130903042;
 			
 			static Layout()
 			{
@@ -114,8 +152,8 @@ namespace RetoN
 		public partial class Menu
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int activity_main = 2131099648;
+			// aapt resource value: 0x7f070000
+			public const int activity_main = 2131165184;
 			
 			static Menu()
 			{
@@ -130,26 +168,35 @@ namespace RetoN
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040003
-			public const int add_button_text = 2130968579;
+			// aapt resource value: 0x7f050001
+			public const int ApplicationName = 2131034113;
 			
-			// aapt resource value: 0x7f040002
-			public const int add_textbox_hint = 2130968578;
+			// aapt resource value: 0x7f050000
+			public const int Hello = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int app_name = 2130968577;
+			// aapt resource value: 0x7f050006
+			public const int add_button_text = 2131034118;
 			
-			// aapt resource value: 0x7f040006
-			public const int checkbox_text = 2130968582;
+			// aapt resource value: 0x7f050005
+			public const int add_textbox_hint = 2131034117;
 			
-			// aapt resource value: 0x7f040000
-			public const int library_name = 2130968576;
+			// aapt resource value: 0x7f050004
+			public const int app_name = 2131034116;
 			
-			// aapt resource value: 0x7f040005
-			public const int menu_refresh = 2130968581;
+			// aapt resource value: 0x7f050009
+			public const int checkbox_text = 2131034121;
 			
-			// aapt resource value: 0x7f040004
-			public const int mobile_services = 2130968580;
+			// aapt resource value: 0x7f050003
+			public const int library_name = 2131034115;
+			
+			// aapt resource value: 0x7f050008
+			public const int menu_refresh = 2131034120;
+			
+			// aapt resource value: 0x7f050007
+			public const int mobile_services = 2131034119;
+			
+			// aapt resource value: 0x7f050002
+			public const int title_activity_webview = 2131034114;
 			
 			static String()
 			{
@@ -164,11 +211,11 @@ namespace RetoN
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int AppBaseTheme = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int AppBaseTheme = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int AppTheme = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int AppTheme = 2131099649;
 			
 			static Style()
 			{

@@ -79,6 +79,10 @@ namespace RetoN
 
       // Create the client instance, using the mobile app backend URL.
       client = new MobileServiceClient(applicationURL);
+      instance = this;
+      GcmClient.CheckDevice(this); GcmClient.CheckManifest(this);
+      GcmClient.Register(this, ToDoBroadcastReceiver.senderIDs);
+
 #if OFFLINE_SYNC_ENABLED
             await InitLocalStoreAsync();
 
